@@ -4,7 +4,8 @@ participantes = [
     {"nombre": "Ana", "numero": "whatsapp:+56912345678"},
     {"nombre": "Luis", "numero": "whatsapp:+56987654321"},
     {"nombre": "María", "numero": "whatsapp:+56911223344"},
-    {"nombre": "Carlos", "numero": "whatsapp:+56955667788"}
+    {"nombre": "Carlos", "numero": "whatsapp:+56955667788"},
+    {"nombre": "Nicolas", "numero": "whatsapp:+56957667788"},
 ]
 
 # 3. Sorteo aleatorio
