@@ -8,9 +8,8 @@ auth_token = os.getenv('TOKEN_AUTH')
 client = Client(account_sid, auth_token)
 
 message = client.messages.create(
-  from_='whatsapp:+14155238886',
-  body= '*cagaste* papito',
-  to= os.getenv('PHONE_NUMBER')
+  body='*cagaste* papito',
+  media_url=["https://demo.twilio.com/owl.png"],
+  to= os.getenv('PHONE_NUMBER'),
+  from_='whatsapp:+14155238886'
 )
-
-print(message.sid)

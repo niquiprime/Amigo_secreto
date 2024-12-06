@@ -1,12 +1,9 @@
 import random
+import json
 
-participantes = [
-    {"nombre": "Ana", "numero": "whatsapp:+56912345678"},
-    {"nombre": "Luis", "numero": "whatsapp:+56987654321"},
-    {"nombre": "María", "numero": "whatsapp:+56911223344"},
-    {"nombre": "Carlos", "numero": "whatsapp:+56955667788"},
-    {"nombre": "Nicolas", "numero": "whatsapp:+56957667788"},
-]
+
+with open('participantes.json','r') as archivo:
+    participantes = json.load(archivo)
 
 # 3. Sorteo aleatorio
 nombres = [p["nombre"] for p in participantes]
@@ -21,7 +18,5 @@ def asignar_amigo_secreto(nombres):
             asignaciones = {nombres[i]: asignados[i] for i in range(len(nombres))}
             
     return asignaciones
-    
-asignaciones = asignar_amigo_secreto(nombres)
 
-print(asignaciones)
+print(asignar_amigo_secreto(nombres))
