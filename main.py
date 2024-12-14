@@ -59,14 +59,27 @@ for participante in participantes:
         amigo_secreto = next(p for p in participantes if p["nombre"] == amigo_secreto_nombre)
         opciones_regalo = "\n".join([f"{i + 1}. {opcion}" for i, opcion in enumerate(amigo_secreto["opciones_regalo"])])
 
-        mensaje =f"¡Hola *{participante['nombre']}*! 🎅 Tu amigo secreto es: *{amigo_secreto_nombre}* !!.\n\n Estas son sus opciones de regalo para el/ella: \n{opciones_regalo} 🎁\n\n ¡No se lo digas a nadie! 🤫 *TESTING*" 
+        mensaje =f"¡Hola *{participante['nombre']}*! 🎅 Tu amigo secreto es: *{amigo_secreto_nombre}* !!.\n\n 🎁\n\n ¡No se lo digas a nadie! 🤫"
 
-        message = client.messages.create(
+        mensaje2=f"¡Hola *{participante['nombre']}*, este es un mensaje de prueba, por favor avisar al grupo si te llega este mensaje correctamente."
+
+        mensaje3="TE AMOOOOOOO"
+
+        if (participante["nombre"] == "Ricardo"):
+            message = client.messages.create(
+            body=mensaje,
+            from_='whatsapp:+14155238886',
+            to="whatsapp:+56957133641"
+        )
+        else:
+            message = client.messages.create(
             body=mensaje,
             from_='whatsapp:+14155238886',
             to=participante["numero"]
-        )
-        print(f"Mensaje enviado a {participante['nombre']}: SID {message.sid}")
+            )
+            print(f"Mensaje enviado a {participante['nombre']}: SID {message.sid}")
+
+        
 
     except KeyError as e:
         print(f"Error: Clave faltante en los datos del participante o amigo secreto: {e}")
